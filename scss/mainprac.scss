@@ -1,0 +1,62 @@
+@import "vars";
+#main {
+  #mainVisual {
+    overflow: hidden;
+    position: relative;
+    ul {
+      li {
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+        &.visual0l {
+          background-image: url(../images/main/mainVisual01.jpg);
+        }
+        &.visual02 {
+          background-image: url(../images/main/mainVisual02.jpg);
+        }
+        &.visual03 {
+          background-image: url(../images/main/mainVisual03.jpg);
+        }
+      }
+    }
+    .slogan {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      text-align: center;
+      color: #fff;
+      .main {
+        font-size: 5.4rem;
+        font-weight: 700;
+        margin-bottom: 50px;
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+      }
+      .sub {
+        font-size: 2rem;
+        line-height: 1.5;
+      }
+    }
+    button {
+      position: absolute;
+      top: 50%;
+      width: 100px;
+      height: 100px;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 5;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      &.prev {
+        left: 0;
+      }
+      &.next {
+        right: 0;
+      }
+    }
+  }
+}
