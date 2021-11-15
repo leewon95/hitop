@@ -14,7 +14,7 @@ img { vertical-align: top; }
 
 #header.open { height: 400px; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; background-color: rgba(0, 0, 0, 0.8); }
 
-#header::after { content: ""; display: block; position: absolute; height: 1px; left: 0px; right: 0px; top: 89px; background-color: rgba(255, 255, 255, 0.5); pointer-events: none; }
+#header::after { content: ""; display: block; position: absolute; height: 1px; left: 0px; right: 0px; top: 89px; background-color: rgba(255, 255, 255, 0.5); }
 
 #header .container { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; padding: 0 50px; }
 
@@ -32,7 +32,7 @@ img { vertical-align: top; }
 
 #header .container #gnb .list > li > a { font-size: 1.8rem; text-transform: uppercase; font-weight: 500; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 90px; padding: 0 50px; }
 
-#header .container #gnb .list > li .depth02 { background-color: #bf0c14; padding: 20px 10px; border-radius: 0 0 15px 15px; display: none; }
+#header .container #gnb .list > li .depth02 { display: none; background-color: #bf0c14; padding: 20px 10px; border-radius: 0 0 15px 15px; }
 
 #header .container #gnb .list > li .depth02 li a { display: block; padding: 10px 0; }
 

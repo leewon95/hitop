@@ -50,7 +50,6 @@ img {
       255,
       0.5
     ); // r(0~255), g(0~255), b(0~255), a(0~1)
-    pointer-events: none;
   }
   .container {
     display: flex;
@@ -87,10 +86,10 @@ img {
             padding: 0 50px;
           }
           .depth02 {
+            display: none;
             background-color: $main-color;
             padding: 20px 10px;
             border-radius: 0 0 15px 15px;
-            display: none;
             li {
               a {
                 display: block;
