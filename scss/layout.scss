@@ -70,9 +70,20 @@ img {
           &:hover {
             > a {
               background-color: $main-color;
+              &::after {
+                content: "";
+                display: block;
+                height: 10px;
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+              }
             }
             .depth02 {
-              display: block;
+              pointer-events: auto;
+              opacity: 1;
+              visibility: visible;
+              transform: translateY(0);
             }
           }
           > a {
@@ -84,12 +95,32 @@ img {
             align-items: center;
             height: 90px;
             padding: 0 50px;
+            position: relative;
           }
           .depth02 {
-            display: none;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            width: 100%;
+            pointer-events: none;
+            box-sizing: border-box;
             background-color: $main-color;
             padding: 20px 10px;
             border-radius: 0 0 15px 15px;
+            transform: translateY(50px);
+            transition: all 0.25s ease;
+            &::before {
+              content: "";
+              display: block;
+              border: 10px solid $main-color;
+              width: 0;
+              height: 0;
+              position: absolute;
+              left: calc(50% - 10px);
+              top: -20px;
+              border-color: transparent;
+              border-bottom-color: $main-color;
+            }
             li {
               a {
                 display: block;
