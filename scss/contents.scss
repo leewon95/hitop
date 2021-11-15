@@ -131,7 +131,7 @@
           background-color: $main-color;
           border-color: $main-color;
           color: $white-color;
-          @include longShadow(darken($main-color, 10), right, 40);
+          @include longShadow(darken($main-color, 10), right, 50);
         }
       }
     }
@@ -139,13 +139,38 @@
 }
 
 .history {
+  position: relative;
   .historyList {
     display: flex;
     flex-direction: column;
-    padding: 100px 0;
+    margin: 100px 0;
+    &::before {
+      content: "";
+      display: block;
+      width: 1px;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      background-color: $border-color;
+      margin-left: -1px;
+    }
     > li {
       width: 50%;
       box-sizing: border-box;
+      position: relative;
+      &::before {
+        content: "";
+        display: block;
+        width: 24px;
+        height: 24px;
+        border: 5px solid $main-color;
+        background-color: $white-color;
+        border-radius: 50%;
+        position: absolute;
+        top: 10px;
+        box-sizing: border-box;
+      }
       .year {
         font-size: $x-large-size;
         font-weight: 700;
@@ -162,6 +187,10 @@
       }
       &:nth-child(2n) {
         padding-right: 50px;
+        &::before {
+          right: 0;
+          transform: translateX(50%);
+        }
         .year {
           display: flex;
           justify-content: flex-end;
@@ -170,14 +199,61 @@
           li {
             flex-direction: row-reverse;
             display: flex;
+            strong {
+              margin-left: 20px;
+            }
           }
         }
       }
       &:nth-child(2n + 1) {
+        &::before {
+          left: 0;
+          transform: translateX(-50%);
+        }
         padding-left: 50px;
         align-items: flex-start;
         margin-left: auto;
+        ul {
+          li {
+            strong {
+              margin-right: 20px;
+            }
+          }
+        }
       }
     }
+  }
+}
+// history end
+
+#map {
+  height: 600px;
+  margin-top: 100px;
+}
+.customOverlay {
+  position: absolute;
+  top: -110px;
+  left: 50%;
+  transform: translateX(-50%);
+  a {
+    padding: 10px 20px;
+    background-color: $main-color;
+    overflow: hidden;
+    @include longShadow(darken($main-color, 10), right, 30);
+    border-radius: 5px;
+    color: $white-color;
+    display: block;
+  }
+  &::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: darken($main-color, 10);
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    transform: translateX(-50%);
   }
 }
