@@ -46,7 +46,7 @@ article {
       transform: translate(-50%, -50%);
       z-index: 3;
       text-align: center;
-      color: #fff;
+      color: $white-color;
       .main {
         font-size: 5.4rem;
         font-weight: 600;
@@ -69,7 +69,7 @@ article {
       background-color: rgba(0, 0, 0, 0.5);
       z-index: 4;
       cursor: pointer;
-      color: #fff;
+      color: $white-color;
       &.prev {
         left: 0;
       }
@@ -89,7 +89,7 @@ article {
         display: flex;
         width: 20px;
         height: 40px;
-        border: 2px solid #fff;
+        border: 2px solid $white-color;
         border-radius: 100px;
         margin-bottom: 10px;
         justify-content: center;
@@ -98,7 +98,7 @@ article {
           display: block;
           width: 3px;
           height: 8px;
-          background-color: #fff;
+          background-color: $white-color;
           border-radius: 100px;
           margin-top: 10px;
           animation: iconAni 0.5s ease infinite alternate;
@@ -108,7 +108,7 @@ article {
         text-transform: uppercase;
         font-weight: 500;
         font-size: 1.2rem;
-        color: #fff;
+        color: $white-color;
       }
     }
   }
@@ -131,7 +131,7 @@ article {
         }
         &::before {
           @include pseudo;
-          border: 1px solid #fff;
+          border: 1px solid $white-color;
           left: 20px;
           right: 20px;
           top: 20px;
@@ -147,7 +147,7 @@ article {
           position: absolute;
           bottom: 40px;
           left: 40px;
-          color: #fff;
+          color: $white-color;
           h3 {
             font-size: $h2;
             font-weight: 600;
@@ -186,7 +186,7 @@ article {
             position: absolute;
             left: 40px;
             bottom: 40px;
-            color: #fff;
+            color: $white-color;
             h3 {
               font-size: $h3;
               margin-bottom: 10px;
@@ -208,6 +208,12 @@ article {
         li {
           width: 390px;
           border: 1px solid $border-color;
+          transition: all 0.25s ease;
+          &:hover {
+            border-color: $main-color;
+            transform: translateY(-20px);
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+          }
           img {
             width: 100%;
             height: 350px;
@@ -228,6 +234,40 @@ article {
             }
           }
         }
+      }
+    }
+  }
+  // news end
+  #customer {
+    background: url(../images/main/bgCustomer.jpg) no-repeat 50%;
+    background-size: cover;
+    color: $white-color;
+    .titleBox {
+      h2 {
+        &::after {
+          @include pseudo(block, relative);
+          @include box(30px, 2px);
+          margin: 30px auto;
+          background-color: $white-color;
+        }
+      }
+      p {
+        line-height: 1.5;
+      }
+    }
+    .btns {
+      display: flex;
+      justify-content: center;
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include box(200px, 60px);
+        color: $white-color;
+        background-color: $main-color;
+        border-radius: 100px;
+        overflow: hidden;
+        @include longShadow(darken($main-color, 10), right, 50);
       }
     }
   }
